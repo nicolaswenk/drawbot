@@ -1,5 +1,5 @@
 // https://en.wikipedia.org/wiki/Hypotrochoid
-void hypotrochoide(double cx=0, double cy=100, double r=50) // étoile à 5 branches
+void etoile(double cx=0, double cy=100, double r=50) // étoile à 5 branches
 {
   double x,y;
   double r1=r, r2=r*3/5, d=r;
@@ -13,10 +13,10 @@ void hypotrochoide(double cx=0, double cy=100, double r=50) // étoile à 5 bran
 }
 
 // https://en.wikipedia.org/wiki/Epicycloid
-void fleur(double cx=0, double cy=130, double rTotal=40, double k=3)//, double a=16, double b=10) // rosace
+void fleur(double cx=0, double cy=130, double rTotal=40, double nbPetales=3)//, double a=16, double b=10) // rosace
 {
-  double rCircleOut=rTotal/(k+1.0);
-  double rCircleIn=rCircleOut*k;
+  double rCircleOut=rTotal/(nbPetales+1.0);
+  double rCircleIn=rCircleOut*nbPetales;
   double x,y;
   for (double t = 0; t<2*M_PI; t+=par) {
     x = cx+(rCircleIn + rCircleOut)*cos(t) - rCircleOut*cos((rCircleIn/rCircleOut + 1)* t);
